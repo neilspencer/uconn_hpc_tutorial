@@ -48,6 +48,8 @@ module load r/4.2.2
 Next, to run our simple R script directly, use:
 sbatch -n 1 R CMD BATCH cluster_test.R
 
+Use sacct to check the status of the job
+
 Inspecting this file, you should see that it is written to create a csv called test.csv. Let's move this back to our local computer. 
 
 The following command should be run from the [LOCAL] window. Navigate to whichever directory you want to copy the results to, then run the command:
@@ -79,6 +81,12 @@ Using [LOCAL], transfer both test_batch.sh and test_batch.R to the cluster.
 scp test_batch.R [username aaa00000]@hpc2.storrs.hpc.uconn.edu:/home/[username aaa00000]/test_directory/
 
 scp test_batch.sh [username aaa00000]@hpc2.storrs.hpc.uconn.edu:/home/[username aaa00000]/test_directory/
+
+Run the code on [CLUSTER] using the command
+
+sbatch test_batch.sh
+
+You should get emailed when the code runs.
 
 Once you have run this code, you can transfer back each result to your local computer.
 
